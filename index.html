@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventLitez</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body class="light-mode">
+    <header>
+        <h1>EventLitez</h1>
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
+    </header>
+    <nav>
+        <a href="#create-event" id="create-event-nav">Create Event</a>
+        <a href="#upcoming-events" id="upcoming-events-nav">Upcoming Events</a>
+    </nav>
+    <main>
+        <section id="event-creation">
+            <h2>Create an Event</h2>
+            <form id="event-form">
+                <label for="event-name">Event Name:</label>
+                <input type="text" id="event-name" required>
+
+                <label for="event-host">Host:</label>
+                <input type="text" id="event-host" required>
+
+                <label for="event-date">Date:</label>
+                <div class="date-input">
+                    <input type="text" id="event-date" required>
+                    <span class="calendar-icon">📅</span>
+                </div>
+
+                <label for="event-time">Time:</label>
+                <div class="time-input">
+                    <input type="number" id="event-hour" placeholder="Hour" min="1" max="12" required>
+                    <input type="number" id="event-minute" placeholder="Minute" min="0" max="59" required>
+                    <label>
+                        <input type="radio" name="ampm" value="AM" checked> AM
+                    </label>
+                    <label>
+                        <input type="radio" name="ampm" value="PM"> PM
+                    </label>
+                </div>
+
+                <label for="event-location">Location:</label>
+                <input type="text" id="event-location" required>
+
+                <button type="submit">Add Event</button>
+            </form>
+        </section>
+
+        <section id="event-list">
+            <h2>Upcoming Events</h2>
+            <ul id="event-list-items">
+            </ul>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</body>
+</html>
